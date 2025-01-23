@@ -1,0 +1,39 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  main:
+    name: CI
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23.4"
+
+      - name: "Install dependencies"
+        run: "go mod download"
+
+      - name: Check and get dependencies
+        run: |
+          go mod tidy
+          git diff --exit-code go.mod
+          # git diff --exit-code go.sum
+          go mod download
+          # go mod vendor
+          # git diff --exit-code ./vendor/
+
+      - name: Test
+        run: go test -v -cover ./...
+
+      - name: "Lint"
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: v1.60

@@ -1,0 +1,7 @@
+displayName: "Extract Common Name"
+type: "middleware"
+import: "github.com/beyerleinf/traefik-plugin-extract-cn"
+summary: "This plugin can - when used in conjunction with the built-in PassTLSClientCert Middleware - extract the Common Name and put it into an HTTP Header with the defined name."
+iconPath: .assets/icon.png
+testData:
+  DestHeader: "X-Target-Header"
