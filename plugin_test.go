@@ -14,8 +14,9 @@ func TestCreateConfig(t *testing.T) {
 	if config == nil {
 		t.Fatal("CreateConfig() returned nil")
 	}
+
 	if config.DestHeader != "" {
-		t.Errorf("Expected empty OldHeader, got %q", config.DestHeader)
+		t.Errorf("Expected empty DestHeader, got %q", config.DestHeader)
 	}
 }
 
