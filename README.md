@@ -9,7 +9,7 @@ experimental:
   plugins:
     extractCommonName:
       modulename: "github.com/beyerleinf/traefik-plugin-extract-cn"
-      version: "v1.0.0"
+      version: "v1.0.1"
 ```
 
 ### Dynamic
