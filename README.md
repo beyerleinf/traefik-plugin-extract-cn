@@ -2,6 +2,8 @@
 
 This plugin can - when used in conjunction with the built-in `PassTLSClientCert` Middleware - extract the Common Name and put it into an HTTP Header with the defined name. This plugin requires you to enable the cert info on the `PassTLSClientCert` Middleware with at least the Common Name enabled.
 
+### Static
+
 ```yml
 experimental:
   plugins:
