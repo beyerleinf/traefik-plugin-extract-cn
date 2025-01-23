@@ -23,7 +23,7 @@ type ExtractClientCert struct {
 
 func New(ctx context.Context, next http.Handler, config *Config, name string) (http.Handler, error) {
 	if config.DestHeader == "" {
-		return nil, errors.New("both oldHeader and newHeader must be specified")
+		return nil, errors.New("destHeader must be specified")
 	}
 
 	return &ExtractClientCert{
